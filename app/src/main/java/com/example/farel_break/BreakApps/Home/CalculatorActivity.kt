@@ -14,6 +14,13 @@ class CalculatorActivity : AppCompatActivity() {
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // --- SETUP TOOLBAR ---
+        setSupportActionBar(binding.toolbarCalculator)
+        supportActionBar?.apply {
+            title = "Kalkulator Geometri"
+            setDisplayHomeAsUpEnabled(true) // Menampilkan tombol panah kembali
+        }
+
         // 1. Terima data dari Intent (Judul & Deskripsi)
         val title = intent.getStringExtra("EXTRA_TITLE") ?: "Kalkulator"
         val desc = intent.getStringExtra("EXTRA_DESC") ?: "Rumus Bangun"
@@ -50,5 +57,11 @@ class CalculatorActivity : AppCompatActivity() {
                 Toast.makeText(this, "Harap isi semua input!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    // --- FUNGSI AGAR TOMBOL BACK DI TOOLBAR BERFUNGSI ---
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

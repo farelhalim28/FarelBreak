@@ -6,27 +6,31 @@ import com.example.farel_break.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
 
-    // ViewBinding
     private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Inisialisasi ViewBinding
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ambil username yang dikirim dari LoginActivity
-        val username = intent.getStringExtra("USERNAME") ?: "Pengguna"
+        // AKTIFKAN TOOLBAR
+        setSupportActionBar(binding.toolbarWelcome)
+        supportActionBar?.apply {
+            title = "Welcome Page"
+            setDisplayHomeAsUpEnabled(true) // Tombol panah kembali
+        }
 
-        // Tampilkan sapaan dengan nama pengguna
+        val username = intent.getStringExtra("USERNAME") ?: "Pengguna"
         binding.tvWelcomeUsername.text = "Halo, $username! 👋"
 
-        // Tombol Lanjutkan - kamu bisa arahkan ke activity berikutnya
         binding.btnContinue.setOnClickListener {
-            // TODO: Ganti dengan activity tujuan berikutnya
-            // Contoh: startActivity(Intent(this, DashboardActivity::class.java))
-            finish() // Sementara hanya menutup activity ini
+            finish()
         }
+    }
+
+    // FUNGSI TOMBOL BACK TOOLBAR
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
