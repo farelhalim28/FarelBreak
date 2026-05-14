@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.farel_break.BreakApps.LoginActivity
 import com.example.farel_break.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    // Properti ini aman digunakan selama view fragment masih hidup
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,14 +28,17 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // ✅ Perbaikan: Tambahkan parameter savedInstanceState ke super call
         super.onViewCreated(view, savedInstanceState)
 
-        // Ambil data SharedPreferences
+        // ✅ Setup Toolbar
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Home"
+        }
+
         val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
         val username = sharedPref.getString("username", "Pengguna")
 
-        // ✅ Setup Klik Tombol dengan requireContext() agar aman
         binding.btnRumus.setOnClickListener {
             startActivity(Intent(requireContext(), CalculatorActivity::class.java))
         }
@@ -65,20 +69,19 @@ class HomeFragment : Fragment() {
             .setPositiveButton("Ya") { _, _ ->
                 val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
                 sharedPref.edit().clear().apply()
-
-                // Redirect ke Login dan bersihkan tumpukan Activity
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 requireActivity().finish()
             }
-            .setNegativeButton("Tidak", null)
+            .setNegativeButton("Tidak") { _, _ ->
+                Snackbar.make(binding.root, "Logout dibatalkan", Snackbar.LENGTH_SHORT).show()
+            }
             .show()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // ✅ Penting: Hapus binding saat view dihancurkan untuk cegah memory leak
         _binding = null
     }
 }

@@ -13,6 +13,7 @@
         android:theme="@style/Theme.FarelBreak"
         android:usesCleartextTraffic="true">
 
+        <!-- LAUNCHER: SplashScreen -->
         <activity
             android:name=".BreakApps.SplashScreenActivity"
             android:exported="true">
@@ -22,21 +23,24 @@
             </intent-filter>
         </activity>
 
+        <!-- Login -->
         <activity
             android:name=".BreakApps.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
 
+        <!-- ✅ BaseActivity: theme SAMA dengan app, jangan NoActionBar terpisah -->
         <activity
             android:name=".BreakApps.BaseActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false" />
 
+        <!-- Activity dalam folder Home -->
         <activity android:name=".BreakApps.Home.WelcomeActivity" android:exported="false" />
         <activity android:name=".BreakApps.Home.CalculatorActivity" android:exported="false" />
         <activity android:name=".BreakApps.Home.CustomTwoActivity" android:exported="false" />
         <activity android:name=".BreakApps.Home.WebViewActivity" android:exported="false" />
 
+        <!-- MainActivity tetap didaftarkan -->
         <activity android:name=".BreakApps.MainActivity" android:exported="false" />
 
     </application>

@@ -53,16 +53,15 @@ class LoginActivity : AppCompatActivity() {
                     binding.etPassword.requestFocus()
                 }
                 else -> {
-                    // ✅ Simpan isLogin = true ke SharedPreferences
+                    // Simpan isLogin ke SharedPreferences
                     val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                     sharedPref.edit()
                         .putBoolean("isLogin", true)
                         .putString("username", username)
                         .apply()
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("USERNAME", username)
-                    // Hapus back stack agar tidak bisa back ke login
+                    // ✅ Ke BaseActivity (bukan MainActivity)
+                    val intent = Intent(this, BaseActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
