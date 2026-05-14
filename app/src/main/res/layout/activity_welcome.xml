@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F0FF"
+    android:gravity="center"
+    android:paddingHorizontal="32dp"
+    android:paddingVertical="48dp">
+
+    <!-- Ilustrasi / Gambar (FrameLayout sebagai placeholder ilustrasi) -->
+    <FrameLayout
+        android:layout_width="260dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="36dp">
+
+        <!-- Background card ilustrasi -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_illustration_card" />
+
+        <!-- Icon utama di tengah (bisa diganti ImageView dengan gambar sendiri) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Lingkaran atas (dekorasi) -->
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_dot_yellow"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="40dp" />
+
+            <!-- Emoji / Icon utama -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎉"
+                android:textSize="72sp"
+                android:layout_gravity="center" />
+
+            <!-- Lingkaran bawah (dekorasi) -->
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/bg_dot_blue"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="40dp" />
+        </LinearLayout>
+
+        <!-- Bintang dekorasi kiri -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✦"
+            android:textSize="18sp"
+            android:textColor="#FFD700"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Bintang dekorasi kanan -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✦"
+            android:textSize="12sp"
+            android:textColor="#3D5AFE"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp" />
+    </FrameLayout>
+
+    <!-- Judul Selamat Datang -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang!"
+        android:textSize="14sp"
+        android:textColor="#3D5AFE"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="di Coinpay"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A2E"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Nama pengguna (diisi dari intent) -->
+    <TextView
+        android:id="@+id/tvWelcomeUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Halo, Pengguna!"
+        android:textSize="18sp"
+        android:textColor="#3D5AFE"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Deskripsi -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kami senang kamu bergabung.\nSaatnya kirim, terima, dan pantau\nkeuangan kamu dengan mudah."
+        android:textSize="14sp"
+        android:textColor="#7B7B9D"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Tombol Lanjutkan -->
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Lanjutkan"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_button_primary"
+        android:stateListAnimator="@null" />
+
+</LinearLayout>
