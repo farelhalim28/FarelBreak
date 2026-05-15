@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/simandes_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,26 +13,28 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="#2E7D32"
+            android:background="@color/simandes_navy"
             android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
+                android:text="Profile Pengembang"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivProfile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_centerInParent="true"
                 android:background="@android:color/white"
-                android:padding="5dp"
+                android:padding="3dp"
                 android:src="@drawable/ic_person"
-                app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+                app:strokeColor="@color/simandes_yellow"
+                app:strokeWidth="2dp" />
 
             <TextView
                 android:id="@+id/tvNamaLengkap"
@@ -40,10 +42,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ivProfile"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="Nama Lengkap"
+                android:layout_marginTop="12dp"
+                android:text="Farel Abdul Halim"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -53,7 +55,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="-30dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="4dp">
+            app:cardElevation="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,28 +66,29 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Identitas Pengembang"
+                    android:text="Identitas Akademik"
                     android:textStyle="bold"
-                    android:textColor="#2E7D32"
+                    android:textColor="@color/simandes_navy"
                     android:textSize="16sp" />
 
                 <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD"
-                    android:layout_marginVertical="10dp"/>
+                    android:layout_width="40dp"
+                    android:layout_height="3dp"
+                    android:background="@color/simandes_yellow"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"/>
 
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NIM" android:textSize="12sp"/>
-                <TextView android:id="@+id/tvNim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12345678" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NIM" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvNim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2457301049" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="12dp" android:textColor="@color/text_primary"/>
 
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Program Studi" android:textSize="12sp"/>
-                <TextView android:id="@+id/tvProdi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Teknik Informatika" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Program Studi" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvProdi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sistem Informasi" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="12dp" android:textColor="@color/text_primary"/>
 
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Universitas" android:textSize="12sp"/>
-                <TextView android:id="@+id/tvKampus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kampus Kamu" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Universitas" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvKampus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Politeknik Caltex Riau" android:textStyle="bold" android:textSize="16sp" android:layout_marginBottom="12dp" android:textColor="@color/text_primary"/>
 
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Email" android:textSize="12sp"/>
-                <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="email@mhs.ac.id" android:textStyle="bold" android:textColor="#2E7D32" android:textSize="16sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Email" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="farel24si@mahasiswa.pcr.ac.id" android:textStyle="bold" android:textColor="@color/simandes_navy" android:textSize="16sp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -94,7 +97,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            app:cardCornerRadius="15dp">
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,14 +107,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kontribusi dalam Proyek"
+                    android:text="Kontribusi Proyek"
                     android:textStyle="bold"
-                    android:textColor="#E65100"/>
+                    android:textColor="@color/simandes_navy"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Mengembangkan aplikasi SIMANDES sebagai sistem informasi layanan mandiri desa digital."/>
+                    android:textColor="@color/text_primary"
+                    android:text="Bertanggung jawab penuh dalam perancangan UI/UX dan implementasi logika SharedPreferences pada sistem registrasi SIMANDES."/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

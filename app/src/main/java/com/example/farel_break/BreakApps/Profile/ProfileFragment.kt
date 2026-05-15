@@ -1,5 +1,6 @@
 package com.example.farel_break.BreakApps.Profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +24,12 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Lo bisa isi data lo di sini secara manual atau tarik dari SharedPreferences
-        binding.tvNamaLengkap.text = "Farel Abdul Halim" // Ganti nama lo
+        // Ambil data dari SharedPreferences agar profil dinamis sesuai registrasi
+        val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+        val namaTerdaftar = sharedPref.getString("reg_nama", "Farel Abdul Halim")
+
+        // Set data ke UI
+        binding.tvNamaLengkap.text = namaTerdaftar
         binding.tvNim.text = "2457301049"
         binding.tvProdi.text = "Sistem Informasi"
         binding.tvKampus.text = "Politeknik Caltex Riau"

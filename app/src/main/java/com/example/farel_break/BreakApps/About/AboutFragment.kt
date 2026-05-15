@@ -24,16 +24,16 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Setup Toolbar sesuai modul Pertemuan 7
+        // Setup Toolbar
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarAbout)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Tentang Aplikasi"
         }
 
-        // Isi konten deskripsi (Bisa lo sesuaikan lagi kalimatnya)
+        // Isi konten deskripsi
         binding.tvAppName.text = "SIMANDES"
         binding.tvTagline.text = "Sistem Informasi Mandiri & Surat Desa"
-        binding.tvDescription.text = "SIMANDES adalah platform digital terintegrasi yang dirancang khusus untuk mendukung proses digitalisasi desa di Indonesia dalam program Bina Desa Digital."
+        binding.tvDescription.text = "SIMANDES adalah platform digital terintegrasi yang dirancang khusus untuk mendukung percepatan program Bina Desa Digital melalui otomatisasi administrasi dan layanan surat-menyurat desa."
     }
 
     override fun onDestroyView() {
