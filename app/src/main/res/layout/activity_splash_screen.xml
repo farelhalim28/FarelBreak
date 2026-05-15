@@ -1,48 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="#2E7D32"
-    android:padding="40dp">
+    android:background="@drawable/bg_gradient_simandes">
 
-    <!-- Logo bulat -->
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bg_logo_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:gravity="center"
-        android:layout_marginBottom="24dp">
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="70dp"
+            app:cardElevation="12dp">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:background="@color/white"
+                android:scaleType="centerInside" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🌿"
-            android:textSize="44sp" />
+            android:text="SIMANDES"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/simandes_yellow"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sistem Informasi Bina Desa"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="4dp" />
+
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bina Desa"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="8dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Membangun Desa, Membangun Bangsa"
-        android:textSize="13sp"
-        android:textColor="#A5D6A7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
-        android:layout_marginBottom="60dp" />
+        android:orientation="vertical">
 
-    <ProgressBar
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:indeterminateTint="#FFFFFF" />
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminateTint="@color/simandes_yellow"
+            android:layout_marginBottom="16dp" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Membangun Desa, Membangun Bangsa"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/simandes_yellow"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1" />
+    </LinearLayout>
+
+</RelativeLayout>

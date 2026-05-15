@@ -6,4 +6,5 @@
     <color name="text_primary">#1E1E1E</color>
     <color name="text_secondary">#7A7A7A</color>
     <color name="white">#FFFFFF</color>
-</resources>
+
+    <color name="simandes_navy">#1A237E</color> <color name="simandes_yellow">#FFD600</color> <color name="simandes_light_navy">#3949AB</color> <color name="simandes_bg">#F8F9FA</color> </resources>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0FF"
+    android:background="@color/simandes_bg"
     android:fillViewport="true">
 
     <LinearLayout
@@ -13,7 +14,6 @@
         android:paddingTop="60dp"
         android:paddingBottom="40dp">
 
-        <!-- LOGO AREA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,62 +21,46 @@
             android:gravity="center"
             android:layout_marginBottom="36dp">
 
-            <!-- Logo Circle -->
-            <FrameLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="10dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:padding="12dp"
+                    android:background="@color/white"
+                    android:scaleType="centerInside" />
+            </androidx.cardview.widget.CardView>
 
-                <View
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/bg_logo_circle" />
-
-                <!-- Ganti dengan ImageView jika punya logo sendiri -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="₿"
-                    android:textSize="36sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-            </FrameLayout>
-
-            <!-- App Name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="14dp"
-                android:text="Coinpay"
+                android:layout_marginTop="16dp"
+                android:text="SIMANDES"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A2E"
-                android:letterSpacing="0.02" />
+                android:textColor="@color/simandes_navy"
+                android:letterSpacing="0.05" />
 
-            <!-- Deskripsi Selamat Datang -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginTop="6dp"
-                android:text="Selamat datang! Masuk ke akun Anda\nuntuk mulai bertransaksi."
+                android:text="Sistem Informasi Bina Desa"
                 android:textSize="13sp"
-                android:textColor="#7B7B9D"
-                android:gravity="center"
-                android:lineSpacingExtra="3dp" />
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
         </LinearLayout>
 
-        <!-- CARD LOGIN -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="#FFFFFF"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardElevation="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,35 +68,24 @@
                 android:orientation="vertical"
                 android:padding="24dp">
 
-                <!-- Judul Form -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masuk ke Coinpay"
+                    android:text="Login Akun"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="#1A1A2E"
-                    android:layout_marginBottom="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Masukkan username dan password Anda"
-                    android:textSize="12sp"
-                    android:textColor="#7B7B9D"
+                    android:textColor="@color/simandes_navy"
                     android:layout_marginBottom="24dp" />
 
-                <!-- Label Username -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Username"
                     android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="#1A1A2E"
+                    android:textColor="@color/simandes_navy"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Input Username -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
@@ -121,38 +94,26 @@
                     android:gravity="center_vertical"
                     android:paddingHorizontal="14dp"
                     android:layout_marginBottom="18dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="👤"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="10dp" />
-
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👤" android:layout_marginEnd="10dp" />
                     <EditText
                         android:id="@+id/etUsername"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"
-                        android:hint="Masukkan username"
+                        android:hint="Username"
                         android:textSize="14sp"
-                        android:textColor="#1A1A2E"
-                        android:textColorHint="#BBBBD0"
-                        android:inputType="text"
                         android:singleLine="true" />
                 </LinearLayout>
 
-                <!-- Label Password -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Password"
                     android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="#1A1A2E"
+                    android:textColor="@color/simandes_navy"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Input Password -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
@@ -160,86 +121,50 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="14dp"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="🔒"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="10dp" />
-
+                    android:layout_marginBottom="24dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔒" android:layout_marginEnd="10dp" />
                     <EditText
                         android:id="@+id/etPassword"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@null"
-                        android:hint="Masukkan password"
+                        android:hint="Password"
                         android:textSize="14sp"
-                        android:textColor="#1A1A2E"
-                        android:textColorHint="#BBBBD0"
                         android:inputType="textPassword"
                         android:singleLine="true" />
-
-                    <!-- Toggle Password Visibility -->
                     <ImageView
                         android:id="@+id/ivTogglePassword"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
-                        android:src="@android:drawable/ic_menu_view"
-                        android:tint="#BBBBD0"
-                        android:clickable="true"
-                        android:focusable="true" />
+                        android:src="@android:drawable/ic_menu_view" />
                 </LinearLayout>
 
-                <!-- Lupa Password -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="Lupa password?"
-                    android:textSize="12sp"
-                    android:textColor="#3D5AFE"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Tombol Login -->
                 <Button
                     android:id="@+id/btnLogin"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:text="Masuk"
+                    android:text="Masuk Sekarang"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/bg_button_primary"
-                    android:stateListAnimator="@null" />
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/simandes_navy" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Daftar -->
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Belum punya akun? "
-                android:textSize="13sp"
-                android:textColor="#7B7B9D" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Daftar sekarang"
-                android:textSize="13sp"
-                android:textColor="#3D5AFE"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:text="Belum punya akun? Daftar Sekarang"
+            android:textSize="13sp"
+            android:textColor="@color/simandes_navy"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 </ScrollView>

@@ -12,36 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FarelBreak"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".BreakApps.RegisterActivity"
+            android:exported="false" />
         <!-- LAUNCHER: SplashScreen -->
         <activity
             android:name=".BreakApps.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Login -->
+        </activity> <!-- Login -->
         <activity
             android:name=".BreakApps.LoginActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
-
-        <!-- ✅ BaseActivity: theme SAMA dengan app, jangan NoActionBar terpisah -->
+            android:windowSoftInputMode="adjustPan" /> <!-- ✅ BaseActivity: theme SAMA dengan app, jangan NoActionBar terpisah -->
         <activity
             android:name=".BreakApps.BaseActivity"
+            android:exported="false" /> <!-- Activity dalam folder Home -->
+        <activity
+            android:name=".BreakApps.Home.WelcomeActivity"
             android:exported="false" />
-
-        <!-- Activity dalam folder Home -->
-        <activity android:name=".BreakApps.Home.WelcomeActivity" android:exported="false" />
-        <activity android:name=".BreakApps.Home.CalculatorActivity" android:exported="false" />
-        <activity android:name=".BreakApps.Home.CustomTwoActivity" android:exported="false" />
-        <activity android:name=".BreakApps.Home.WebViewActivity" android:exported="false" />
-
-        <!-- MainActivity tetap didaftarkan -->
-        <activity android:name=".BreakApps.MainActivity" android:exported="false" />
-
+        <activity
+            android:name=".BreakApps.Home.CalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BreakApps.Home.CustomTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BreakApps.Home.WebViewActivity"
+            android:exported="false" /> <!-- MainActivity tetap didaftarkan -->
+        <activity
+            android:name=".BreakApps.MainActivity"
+            android:exported="false" />
     </application>
+
 </manifest>

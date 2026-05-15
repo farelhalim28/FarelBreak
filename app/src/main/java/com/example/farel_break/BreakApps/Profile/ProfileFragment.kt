@@ -24,11 +24,11 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Lo bisa isi data lo di sini secara manual atau tarik dari SharedPreferences
-        binding.tvNamaLengkap.text = "Farel Prayoga" // Ganti nama lo
-        binding.tvNim.text = "2257301xxx"
-        binding.tvProdi.text = "Teknik Informatika"
+        binding.tvNamaLengkap.text = "Farel Abdul Halim" // Ganti nama lo
+        binding.tvNim.text = "2457301049"
+        binding.tvProdi.text = "Sistem Informasi"
         binding.tvKampus.text = "Politeknik Caltex Riau"
-        binding.tvEmail.text = "farel@mahasiswa.pcr.ac.id"
+        binding.tvEmail.text = "farel24si@mahasiswa.pcr.ac.id"
     }
 
     override fun onDestroyView() {

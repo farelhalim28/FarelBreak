@@ -4,125 +4,175 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="@color/simandes_bg">
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#2E7D32"
-        app:titleTextColor="#FFFFFF" />
+        android:layout_height="180dp"
+        android:background="@color/simandes_navy"
+        android:padding="24dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang di"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp" />
 
-    <!-- Konten scroll -->
+            <TextView
+                android:id="@+id/tvUserSapaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIMANDES"
+                android:textColor="@color/simandes_yellow"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="@color/white"
+            android:padding="5dp" />
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_marginTop="-30dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_home_content"
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/tvTitleMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Dashboard SIMANDES"
-                android:textColor="#2E7D32"
-                android:textSize="26sp"
+                android:text="Layanan Desa"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@color/simandes_navy"
+                android:layout_marginBottom="16dp"/>
 
-            <TextView
-                android:id="@+id/tvDescMain"
-                android:layout_width="wrap_content"
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Silahkan pilih layanan desa di bawah ini"
-                android:textColor="#666666"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitleMain" />
+                android:columnCount="2"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
 
-            <Button
-                android:id="@+id/btnRumus"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Rumus Bangun Ruang"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescMain" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnRumus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🧮" android:textSize="40sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kalkulator" android:textStyle="bold" android:textColor="@color/simandes_navy" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btnCustom1"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Halaman Welcome"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnRumus" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnCustom1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👋" android:textSize="40sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sapaan" android:textStyle="bold" android:textColor="@color/simandes_navy" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btnCustom2"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Info Layanan (Custom 2)"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnCustom1" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnCustom2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ℹ️" android:textSize="40sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Info Layanan" android:textStyle="bold" android:textColor="@color/simandes_navy" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#2E7D32"
-                android:text="Bina Desa (WebView)"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnCustom2" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnWebView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🌐" android:textSize="40sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Web Desa" android:textStyle="bold" android:textColor="@color/simandes_navy" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
 
             <Button
                 android:id="@+id/btnLogout"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="40dp"
                 android:backgroundTint="#D32F2F"
-                android:text="Logout"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnWebView" />
+                android:text="Keluar Aplikasi"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
